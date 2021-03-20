@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF-8">
+    <title>Mars Photos thanks to NASAapi </title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<center>
+<table>
+    <thead>
+    <tr>
+        <th> ID </th>
+        <th> Numer dnia solarnego na Marsie </th>
+        <th> Identyfikator kamery </th>
+        <th> Zdjęcie </th>
+        <th> Data wykonania </th>
+        <th> Identyfikator łazika </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${photoList.empty}">
+        <td colspan="6"> Brak danych </td>
+    </tr>
+    <tr th:each="photo : ${photoList}">
+        <td><span th:text="${photo.id}">ID </span></td>
+        <td><span th:text="${photo.sol}">Sol ID </span></td>
+        <td><span th:text="${photo.camera.id}">CameraID </span></td>
+        <td><center><a th:href="${photo.image_src}"><img th:src="${photo.image_src}" width="75%" height="50%"></a></center></td>
+        <td><span th:text="${photo.earth_date}">Data wykonania</span></td>
+        <td><span th:text="${photo.rover.id}">Rover ID</span></td>
+    </tr>
+    </tbody>
+</table>
+</center>
+</body>
+</html>

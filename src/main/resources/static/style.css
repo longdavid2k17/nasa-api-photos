@@ -1,0 +1,13 @@
+body
+{
+    background-color: #ffffff;
+    text-align: center;
+    font-family: "Myriad Pro";
+}
+table
+{
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+}
