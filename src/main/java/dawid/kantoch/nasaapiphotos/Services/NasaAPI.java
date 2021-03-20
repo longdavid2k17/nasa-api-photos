@@ -1,6 +1,5 @@
 package dawid.kantoch.nasaapiphotos.Services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import dawid.kantoch.nasaapiphotos.Models.Camera;
 import dawid.kantoch.nasaapiphotos.Models.Photos;
 import dawid.kantoch.nasaapiphotos.Models.Rover;
@@ -8,7 +7,6 @@ import dawid.kantoch.nasaapiphotos.Repos.DataRepo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.asm.TypeReference;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
@@ -17,9 +15,6 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
 @Service
 public class NasaAPI
@@ -63,7 +58,6 @@ public class NasaAPI
     {
 
         //https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
-        //JSONArray array = new JSONArray("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY");
         JSONObject json = readJsonFromUrl("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY");
         JSONArray arr = json.getJSONArray("photos"); // notice that `"posts": [...]`
         for (int i = 0; i < arr.length(); i++)
