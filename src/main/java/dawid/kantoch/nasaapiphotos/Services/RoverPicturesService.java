@@ -1,5 +1,6 @@
 package dawid.kantoch.nasaapiphotos.Services;
 
+import dawid.kantoch.nasaapiphotos.Interfaces.JsonOperations;
 import dawid.kantoch.nasaapiphotos.Models.Camera;
 import dawid.kantoch.nasaapiphotos.Models.Photos;
 import dawid.kantoch.nasaapiphotos.Models.Rover;
@@ -17,16 +18,17 @@ import java.nio.charset.Charset;
 import java.time.LocalDate;
 
 @Service
-public class NasaAPI
+public class RoverPicturesService implements JsonOperations
 {
     private DataRepo dataRepo;
 
-    public NasaAPI(DataRepo dataRepo)
+    public RoverPicturesService(DataRepo dataRepo)
     {
         this.dataRepo = dataRepo;
     }
 
-    private static String readAll(Reader rd) throws IOException
+    @Override
+    public String readAll(Reader rd) throws IOException
     {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -37,7 +39,8 @@ public class NasaAPI
         return sb.toString();
     }
 
-    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException
+    @Override
+    public JSONObject readJsonFromUrl(String url) throws IOException, JSONException
     {
         InputStream is = new URL(url).openStream();
         try
@@ -53,6 +56,7 @@ public class NasaAPI
         }
     }
 
+    @Override
     @EventListener(ApplicationReadyEvent.class)
     public void getData() throws IOException
     {

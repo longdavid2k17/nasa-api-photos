@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Mars Photos DATA</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
@@ -21,6 +20,33 @@
         </div>
     </div>
 </nav>
+<br/>
+<br/>
+<br/>
+<center>
+    <table class="table table-striped table-dark" width="75%">
+        <caption>Zdjęcie dnia</caption>
+        <thead>
+        <tr>
+            <th scope="col"> Zdjęcie </th>
+            <th scope="col"> Data </th>
+            <th scope="col"> Tytuł </th>
+            <th scope="col"> Opis </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${apodList.empty}">
+            <td colspan="6"> Brak danych </td>
+        </tr>
+        <tr th:each="apod : ${apodList}">
+            <td scope="row"><center><a th:href="${apod.hdurl}"><img th:src="${apod.hdurl}" class="rounded" width="100%" height="100%"></a></center></td>
+            <td><span th:text="${apod.date}">Data </span></td>
+            <td><span th:text="${apod.title}">Tytuł </span></td>
+            <td><span th:text="${apod.explanation}">Opis </span></td>
 
+        </tr>
+        </tbody>
+    </table>
+</center>
 </body>
 </html>
