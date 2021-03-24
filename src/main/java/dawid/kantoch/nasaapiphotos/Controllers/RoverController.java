@@ -6,19 +6,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class NasaController
+public class RoverController
 {
     private DataRepo dataRepo;
 
-    public NasaController(DataRepo dataRepo)
+    public RoverController(DataRepo dataRepo)
     {
         this.dataRepo = dataRepo;
     }
 
-    @GetMapping("/")
+    @GetMapping("/rover")
     public String getPhotos(Model model)
     {
         model.addAttribute("photoList",dataRepo.getPhotosList());
-        return "index";
+        return "rover";
     }
 }
