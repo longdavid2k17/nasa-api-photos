@@ -24,6 +24,8 @@
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
 <center>
     <table class="table table-striped table-dark">
         <caption>Lista zdjęć z Marsa</caption>
@@ -44,7 +46,7 @@
         <tr th:each="photo : ${photoList}">
             <td scope="row"><span th:text="${photo.id}">ID </span></td>
             <td><span th:text="${photo.sol}">Sol ID </span></td>
-            <td><span th:text="${photo.camera.id}">CameraID </span></td>
+            <td><a th:href="@{/rover/{cameraId}(cameraId=${photo.camera.id})}"><span th:text="${photo.camera.id}">CameraID </span></a></td>
             <td><center><a th:href="${photo.image_src}"><img th:src="${photo.image_src}" class="rounded" width="30%" height="15%"></a></center></td>
             <td><span th:text="${photo.earth_date}">Data wykonania</span></td>
             <td><span th:text="${photo.rover.id}">Rover ID</span></td>
