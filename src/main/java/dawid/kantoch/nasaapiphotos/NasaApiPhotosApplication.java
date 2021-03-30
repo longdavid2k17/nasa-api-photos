@@ -10,4 +10,5 @@ public class NasaApiPhotosApplication
     {
         SpringApplication.run(NasaApiPhotosApplication.class, args);
     }
+
 }

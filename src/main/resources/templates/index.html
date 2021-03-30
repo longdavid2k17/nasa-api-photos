@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Mars Photos DATA</title>
@@ -13,9 +13,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" th:href="@{/}">Strona główna <span class="sr-only">(tu jesteś)</span></a>
-            <a class="nav-item nav-link" th:href="@{/rover}">Zdjęcia z łazika</a>
-            <a class="nav-item nav-link" href="#">NeoWS</a>
+            <a class="nav-item nav-link active" th:href="@{/}"><p th:text="#{Menu.mainWebsite}">Strona główna</p></a>
+            <a class="nav-item nav-link" th:href="@{/rover}"><p th:text="#{Menu.rover}">Zdjęcia z łazika</p></a>
+            <a class="nav-item nav-link" th:href="@{/neows}"><p th:text="#{Menu.neoWs}">NeoWS</p></a>
             <a class="nav-item nav-link" href="#">EONET</a>
         </div>
     </div>

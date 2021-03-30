@@ -1,7 +1,7 @@
 package dawid.kantoch.nasaapiphotos.Repos;
 
 import dawid.kantoch.nasaapiphotos.Models.Photos;
-import dawid.kantoch.nasaapiphotos.Services.RoverPicturesService;
+import dawid.kantoch.nasaapiphotos.Services.NeoWSService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -14,11 +14,13 @@ public class DataRepo
 {
     private Logger log = LoggerFactory.getLogger(DataRepo.class);
 
+    private NeoWSService neoWSService;
     private List<Photos> photosList;
 
-    public DataRepo()
+    public DataRepo(NeoWSService neoWSService)
     {
         this.photosList = new ArrayList<>();
+        this.neoWSService = neoWSService;
 
     }
 
@@ -50,7 +52,7 @@ public class DataRepo
             return filteredList;
     }
 
-    public List<Photos> getPhotosFromSol(int sol)
+    public List<Photos> getPhotosBySol(int sol)
     {
         log.info("Getting new list by solar day (id="+sol+")");
         List<Photos> solPhotosList = new ArrayList<>();

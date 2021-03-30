@@ -13,10 +13,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" th:href="@{/}">Strona główna </a>
-            <a class="nav-item nav-link active" th:href="@{/rover}">Zdjęcia z łazika<span class="sr-only">(tu jesteś)</span></a>
-            <a class="nav-item nav-link" href="#">NeoWS</a>
-            <a class="nav-item nav-link" href="#">EONET</a>
+            <a class="nav-item nav-link" th:href="@{/}"><p th:text="#{Menu.mainWebsite}">Strona główna</p></a>
+            <a class="nav-item nav-link active" th:href="@{/rover}"><p th:text="#{Menu.rover}">Zdjęcia z łazika</p></a>
+            <a class="nav-item nav-link" th:href="@{/neows}"><p th:text="#{Menu.neoWs}">NeoWS</p></a>
+            <a class="nav-item nav-link" th:href="@{/eonet}">EONET</a>
         </div>
     </div>
 </nav>

@@ -6,7 +6,6 @@ import dawid.kantoch.nasaapiphotos.Models.Photos;
 import dawid.kantoch.nasaapiphotos.Models.Rover;
 import dawid.kantoch.nasaapiphotos.Repos.DataRepo;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +15,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.net.URL;
-import java.nio.charset.Charset;
 import java.time.LocalDate;
-import java.util.List;
 
 @Service
 public class RoverPicturesService implements JsonOperations

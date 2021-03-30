@@ -12,8 +12,6 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.net.URL;
-import java.nio.charset.Charset;
 
 @Service
 public class ApodService implements JsonOperations
