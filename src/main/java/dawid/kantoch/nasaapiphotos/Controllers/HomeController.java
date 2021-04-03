@@ -23,7 +23,6 @@ public class HomeController
     public String getIndex(Model model)
     {
         model.addAttribute("apodList",apodRepo.getApodList());
-        log.info("Final list size passed to HTML: "+apodRepo.getApodList().size());
         return "index";
     }
 }

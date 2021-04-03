@@ -37,6 +37,4 @@ public interface JsonOperations
             }
         }
     }
-
-    void getData() throws IOException;
 }

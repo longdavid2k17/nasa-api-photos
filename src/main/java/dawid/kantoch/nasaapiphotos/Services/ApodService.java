@@ -28,8 +28,6 @@ public class ApodService implements JsonOperations
         this.apodRepo = apodRepo;
     }
 
-
-    @Override
     @EventListener(ApplicationReadyEvent.class)
     public void getData() throws IOException
     {

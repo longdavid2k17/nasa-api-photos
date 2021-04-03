@@ -32,8 +32,6 @@ public class RoverPicturesService implements JsonOperations
         this.dataRepo = dataRepo;
     }
 
-
-    @Override
     @EventListener(ApplicationReadyEvent.class)
     public void getData() throws IOException
     {

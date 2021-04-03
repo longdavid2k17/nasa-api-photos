@@ -21,10 +21,39 @@
     </div>
 </nav>
 <br/>
-<br/>
-<br/>
-<p>NeoWS (Near Earth Object Web Service</p>
 
-<h1 th:text="#{NeoWsDescription}">CodeCouple</h1>
+<h1>Search for events (maximal duration 7 days)</h1>
+<form method="post" th:object="${dates}">
+    <span>Date from: </span><input type="date" th:field="*{dateFrom}"><br/><br/>
+    <span>Date to: </span><input type="date" th:field="*{dateTo}"><br/><br/>
+    <input type="submit">
+</form>
+<br/>
+<br/>
+<center>
+    <table class="table table-striped table-dark">
+        <caption>Lista zdarzeń</caption>
+        <thead>
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col"> Nazwa </th>
+            <th scope="col"> Dodatkowe informacje </th>
+            <th scope="col"> Czy jest niebezpieczna? </th>
+            <th scope="col"> Data podejścia </th>
+            <th scope="col"> isSentryObject </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="nearEarthObject : ${nearEarthObjectList}">
+            <td scope="row"><span th:text="${nearEarthObject.id}">ID </span></td>
+            <td><span th:text="${nearEarthObject.name}">Nazwa </span></td>
+            <td><a th:href="${nearEarthObject.nasaJplUrl}"><span th:text="${nearEarthObject.nasaJplUrl}">Dodatkowe informacje </span></a></td>
+            <td><span th:text="${nearEarthObject.isPotentiallyHazardousAsteroid}">Czy jest niebezpieczna?</span></td>
+            <td><span th:text="${nearEarthObject.closeApproachData.closeApproachDate}">Data podejścia</span></td>
+            <td><span th:text="${nearEarthObject.isSentryObject}">isSentryObject</span></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
 </body>
 </html>

@@ -1,7 +1,6 @@
 package dawid.kantoch.nasaapiphotos.Repos;
 
 import dawid.kantoch.nasaapiphotos.Models.Photos;
-import dawid.kantoch.nasaapiphotos.Services.NeoWSService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -14,14 +13,11 @@ public class DataRepo
 {
     private Logger log = LoggerFactory.getLogger(DataRepo.class);
 
-    private NeoWSService neoWSService;
     private List<Photos> photosList;
 
-    public DataRepo(NeoWSService neoWSService)
+    public DataRepo()
     {
         this.photosList = new ArrayList<>();
-        this.neoWSService = neoWSService;
-
     }
 
     public List<Photos> getPhotosList()
