@@ -3,8 +3,6 @@ package dawid.kantoch.nasaapiphotos;
 import dawid.kantoch.nasaapiphotos.Models.NeoWSDate;
 import dawid.kantoch.nasaapiphotos.Services.NeoWSService;
 import org.junit.jupiter.api.Test;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

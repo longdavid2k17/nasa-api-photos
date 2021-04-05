@@ -28,10 +28,10 @@
         <caption>Zdjęcie dnia</caption>
         <thead>
         <tr>
-            <th scope="col"> Zdjęcie </th>
-            <th scope="col"> Data </th>
-            <th scope="col"> Tytuł </th>
-            <th scope="col"> Opis </th>
+            <th scope="col"><span th:text="#{IndexPage.Picture}"></span></th>
+            <th scope="col"><span th:text="#{IndexPage.Date}"></span></th>
+            <th scope="col"><span th:text="#{IndexPage.Title}"></span></th>
+            <th scope="col"><span th:text="#{IndexPage.Desc}"></span></th>
         </tr>
         </thead>
         <tbody>
@@ -43,7 +43,6 @@
             <td><span th:text="${apod.date}">Data </span></td>
             <td><span th:text="${apod.title}">Tytuł </span></td>
             <td><span th:text="${apod.explanation}">Opis </span></td>
-
         </tr>
         </tbody>
     </table>

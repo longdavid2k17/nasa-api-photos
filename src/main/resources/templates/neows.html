@@ -21,26 +21,29 @@
     </div>
 </nav>
 <br/>
-
-<h1>Search for events (maximal duration 7 days)</h1>
+<span th:text="#{NeoWs.Description}"></span>
+    <br/>
+    <br/>
+    <br/>
+<h1><span th:text="#{NeoWs.FormTitle}"></span></h1>
 <form method="post" th:object="${dates}">
-    <span>Date from: </span><input type="date" th:field="*{dateFrom}"><br/><br/>
-    <span>Date to: </span><input type="date" th:field="*{dateTo}"><br/><br/>
-    <input type="submit">
+    <span th:text="#{NeoWs.DateFrom}"></span> <input type="date" th:field="*{dateFrom}"><br/><br/>
+    <span th:text="#{NeoWs.DateTo}"></span> <input type="date" th:field="*{dateTo}"><br/><br/>
+    <input type="submit" th:value="#{NeoWs.Send}">
 </form>
 <br/>
 <br/>
 <center>
     <table class="table table-striped table-dark">
-        <caption>Lista zdarzeń</caption>
+        <caption><span th:text="#{NeoWs.Table.Label}"></span></caption>
         <thead>
         <tr>
             <th scope="col"> ID </th>
-            <th scope="col"> Nazwa </th>
-            <th scope="col"> Dodatkowe informacje </th>
-            <th scope="col"> Czy jest niebezpieczna? </th>
-            <th scope="col"> Data podejścia </th>
-            <th scope="col"> isSentryObject </th>
+            <th scope="col"><span th:text="#{NeoWs.Table.Name}"></span></th>
+            <th scope="col"><span th:text="#{NeoWs.Table.AddInfo}"></span></th>
+            <th scope="col"><span th:text="#{NeoWs.Table.Dangerous}"></span></th>
+            <th scope="col"><span th:text="#{NeoWs.Table.Date}"></span></th>
+            <th scope="col">isSentryObject</th>
         </tr>
         </thead>
         <tbody>
