@@ -20,5 +20,54 @@
         </div>
     </div>
 </nav>
+<br/>
+<br/>
+<span th:text="#{Eonet.CountOfResult}"></span>
+<a th:href="@{/eonet/{count}(count=5)}">5</a>, <a th:href="@{/eonet/{count}(count=10)}">10</a>, <a th:href="@{/eonet/{count}(count=15)}">15</a>, <a th:href="@{/eonet/{count}(count=20)}">20</a>, <a th:href="@{/eonet/{count}(count=25)}">25</a>, <a th:href="@{/eonet/{count}(count=30)}">30</a><br/>
+<a th:href="@{/eonet}"><button><span th:text="#{Eonet.ResetButton}"></span></button></a>
+<br/>
+<br/>
+<center>
+    <table class="table table-striped table-dark" width="75%">
+        <caption>EONET</caption>
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col"><span th:text="#{Eonet.table.title}"></span></th>
+            <th scope="col">Link</th>
+            <th scope="col"><span th:text="#{Eonet.table.sources}"></span></th>
+            <th scope="col"><span th:text="#{Eonet.table.category}"></span></th>
+            <th scope="col"><span th:text="#{Eonet.table.date}"></span></th>
+            <th scope="col"><span th:text="#{Eonet.table.coordinates}"></span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${primaryEventList.empty}">
+            <td colspan="6"> Brak danych </td>
+        </tr>
+        <tr th:each="event : ${primaryEventList}">
+            <td scope="row"><span th:text="${event.id}">ID</span></td>
+            <td><span th:text="${event.title}">Tytuł </span></td>
+            <td><a th:href="${event.link}"><span th:text="${event.link}">Link </span></a></td>
+            <td>
+                <ul>
+                    <li class="list-group-item list-group-item-dark" th:each="source: ${event.sources}" th:text="${source.url}"></li>
+                </ul>
+            </td>
+            <td><a th:href="@{/eonet/category/{categoryid}(categoryid=${event.category.id})}"><span th:text="${event.category.title}">Kategoria </span></a></td>
+            <td>
+                <ul>
+                    <li class="list-group-item list-group-item-dark" th:each="geometrie: ${event.geometries}" th:text="${geometrie.date}"></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li class="list-group-item list-group-item-dark" th:each="geometrie: ${event.geometries}" th:text="${geometrie.coordinates}"></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</center>
 </body>
 </html>

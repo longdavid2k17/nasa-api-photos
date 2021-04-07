@@ -1,6 +1,6 @@
 package dawid.kantoch.nasaapiphotos.Controllers;
 
-import dawid.kantoch.nasaapiphotos.Repos.ApodRepo;
+import dawid.kantoch.nasaapiphotos.Repos.APODRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,9 +12,9 @@ public class HomeController
 {
     private Logger log = LoggerFactory.getLogger(HomeController.class);
 
-    private ApodRepo apodRepo;
+    private APODRepo apodRepo;
 
-    public HomeController(ApodRepo apodRepo)
+    public HomeController(APODRepo apodRepo)
     {
         this.apodRepo = apodRepo;
     }

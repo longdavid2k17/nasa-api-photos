@@ -2,8 +2,6 @@ package dawid.kantoch.nasaapiphotos.Services;
 
 import dawid.kantoch.nasaapiphotos.Interfaces.JsonOperations;
 import dawid.kantoch.nasaapiphotos.Models.*;
-import dawid.kantoch.nasaapiphotos.Repos.ApodRepo;
-import dawid.kantoch.nasaapiphotos.Repos.NeoWSRepo;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;

@@ -1,8 +1,8 @@
 package dawid.kantoch.nasaapiphotos.Services;
 
 import dawid.kantoch.nasaapiphotos.Interfaces.JsonOperations;
-import dawid.kantoch.nasaapiphotos.Models.Apod;
-import dawid.kantoch.nasaapiphotos.Repos.ApodRepo;
+import dawid.kantoch.nasaapiphotos.Models.APOD;
+import dawid.kantoch.nasaapiphotos.Repos.APODRepo;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,12 +18,12 @@ public class ApodService implements JsonOperations
 {
     private Logger log = LoggerFactory.getLogger(ApodService.class);
 
-    private ApodRepo apodRepo;
+    private APODRepo apodRepo;
 
     @Value("${apiKey}")
     private String apiKey;
 
-    public ApodService(ApodRepo apodRepo)
+    public ApodService(APODRepo apodRepo)
     {
         this.apodRepo = apodRepo;
     }
@@ -38,7 +38,7 @@ public class ApodService implements JsonOperations
         String hdurl = json.getString("hdurl");
         String title = json.getString("title");
 
-        apodRepo.addApod(new Apod(date,explanation,hdurl,title));
+        apodRepo.addApod(new APOD(date,explanation,hdurl,title));
 
         log.info("Added " + apodRepo.getApodList().size() + " POD to the list");
     }
