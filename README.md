@@ -5,4 +5,4 @@ NASA API usage to get photos and data from Mars rover.
 * Spring MVC
 * JSON
 * Lombok
-* Thymleaf / Bootstrap
+* Thymeleaf / Bootstrap
